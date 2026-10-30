@@ -33,5 +33,21 @@ export default function FlagIcon({ code, className = "" }) {
     );
   }
 
+  if (code === "ru") {
+    return (
+      <svg
+        className={`flag-icon ${className}`.trim()}
+        viewBox="0 0 21 15"
+        width="20"
+        height="14"
+        aria-hidden="true"
+      >
+        <rect width="21" height="5" y="0" fill="#FFFFFF" />
+        <rect width="21" height="5" y="5" fill="#0039A6" />
+        <rect width="21" height="5" y="10" fill="#D52B1E" />
+      </svg>
+    );
+  }
+
   return null;
 }

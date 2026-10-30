@@ -7,7 +7,7 @@ const STORAGE_KEY = "puhas-kodu-tallinn-lang";
 function getInitialLang() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "et" || saved === "en") return saved;
+    if (saved === "et" || saved === "en" || saved === "ru") return saved;
   } catch {
     /* ignore */
   }

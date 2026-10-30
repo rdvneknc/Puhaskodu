@@ -120,14 +120,14 @@ export default function Hero() {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="/images/hero-banner-mobile-768x1024.webp"
+            srcSet="/images/puhaskodu-banner-mobile-1086x1448.webp"
           />
           <img
             className="hero-image"
-            src="/images/hero-banner-1920x800.webp"
+            src="/images/puhaskodu-banner-desktop-1942x809.webp"
             alt=""
-            width="1920"
-            height="800"
+            width="1942"
+            height="809"
           />
         </picture>
       </div>

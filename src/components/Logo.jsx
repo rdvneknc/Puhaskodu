@@ -8,14 +8,14 @@ export default function Logo({ className = "" }) {
       aria-label="Puhas Kodu Tallinn home"
       title="Puhas Kodu Tallinn"
     >
-      <span className="logo-wordmark" aria-hidden="true">
-        <span className="logo-line logo-line--brand">
-          <span className="logo-p">P</span>uhas
-        </span>
-        <span className="logo-line logo-line--kodu">kodu</span>
-        <span className="logo-line logo-line--city">Tallinn</span>
-      </span>
-      <span className="sr-only">Puhas Kodu Tallinn</span>
+      <img
+        className="logo-img"
+        src="/images/puhaskodu-logo-2048x512.webp"
+        alt="Puhas Kodu Tallinn"
+        width="280"
+        height="70"
+        draggable="false"
+      />
     </Link>
   );
 }
