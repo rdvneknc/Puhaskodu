@@ -1,7 +1,7 @@
 export const LOCALES = [
+  { code: "ru", label: "Русский", short: "RU" },
   { code: "et", label: "Eesti", short: "ET" },
   { code: "en", label: "English", short: "EN" },
-  { code: "ru", label: "Русский", short: "RU" },
 ];
 
 const sharedPrices = {
@@ -196,6 +196,9 @@ export const translations = {
     footer: {
       tagline: "Diivanite, madratsite ja toolide puhastus Tallinnas.",
     },
+    ctaBanner: {
+      title: "Leiame teie mööblile sobiva lahenduse.",
+    },
     common: {
       requestQuote: "Küsige pakkumist",
     },
@@ -372,6 +375,9 @@ export const translations = {
     footer: {
       tagline: "Sofa, mattress, and chair cleaning in Tallinn.",
     },
+    ctaBanner: {
+      title: "We’ll find the right solution for your furniture.",
+    },
     common: {
       requestQuote: "Request a quote",
     },
@@ -436,7 +442,7 @@ export const translations = {
       },
       chairs: {
         title: "Стулья",
-        short: "С мягким сиденьем и полностью обитые.",
+        short: "С мягким сиденьем и полностью обитые стулья.",
         long: "Быстрая и аккуратная чистка стульев.",
         includes: ["Стул с мягким сиденьем", "Полностью обитый стул"],
       },
@@ -470,7 +476,7 @@ export const translations = {
     pricesPage: {
       eyebrow: "Цены",
       title: "Прайс-лист",
-      subtitle: "Цены от — итоговая стоимость может зависеть от загрязнения.",
+      subtitle: "Цены указаны «от». Итоговая стоимость может зависеть от загрязнения.",
       categories: [
         {
           id: "sofas",
@@ -547,6 +553,9 @@ export const translations = {
     },
     footer: {
       tagline: "Чистка диванов, матрасов и стульев в Таллинне.",
+    },
+    ctaBanner: {
+      title: "Подберём подходящее решение для вашей мебели.",
     },
     common: {
       requestQuote: "Запросить цену",

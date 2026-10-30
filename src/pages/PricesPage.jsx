@@ -21,27 +21,32 @@ export default function PricesPage() {
                 </Link>
               </div>
 
-              <div className="price-table-wrap">
-                <table className={`price-table${category.singleColumn ? " price-table--single" : ""}`}>
-                  <thead>
-                    <tr>
-                      <th scope="col" className="price-table-item">
-                        &nbsp;
-                      </th>
-                      <th scope="col">{category.colA || ""}</th>
-                      {!category.singleColumn ? <th scope="col">{category.colB}</th> : null}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {category.rows.map((row) => (
-                      <tr key={row.item}>
-                        <th scope="row">{row.item}</th>
-                        <td>{row.a}</td>
-                        {!category.singleColumn ? <td>{row.b}</td> : null}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="price-rows">
+                {category.rows.map((row) => (
+                  <div className="price-row" key={row.item}>
+                    <p className="price-row-item">{row.item}</p>
+                    <div
+                      className={`price-row-values${
+                        category.singleColumn ? " price-row-values--single" : ""
+                      }`}
+                    >
+                      <div className="price-row-value">
+                        {category.colA ? (
+                          <span className="price-row-label">{category.colA}</span>
+                        ) : null}
+                        <strong>{row.a}</strong>
+                      </div>
+                      {!category.singleColumn ? (
+                        <div className="price-row-value">
+                          {category.colB ? (
+                            <span className="price-row-label">{category.colB}</span>
+                          ) : null}
+                          <strong>{row.b}</strong>
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                ))}
               </div>
             </article>
           ))}

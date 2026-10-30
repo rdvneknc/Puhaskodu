@@ -1554,50 +1554,60 @@ select {
   font-size: 0.88rem;
 }
 
-.price-table-wrap {
-  overflow-x: auto;
+.price-rows {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
 }
 
-.price-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 420px;
+.price-row {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  background: #f8fcfd;
+  min-width: 0;
 }
 
-.price-table--single {
-  min-width: 280px;
+.price-row-item {
+  font-weight: 800;
+  font-size: 0.98rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.7rem;
+  color: var(--text);
+  overflow-wrap: anywhere;
 }
 
-.price-table th,
-.price-table td {
-  padding: 0.85rem 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
+.price-row-values {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
 }
 
-.price-table thead th {
-  font-size: 0.82rem;
+.price-row-values--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.price-row-value {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.price-row-label {
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
-.price-table tbody th {
-  font-weight: 700;
-  color: var(--text);
-}
-
-.price-table td {
-  font-weight: 700;
+.price-row-value strong {
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--blue);
-  white-space: nowrap;
-}
-
-.price-table tbody tr:last-child th,
-.price-table tbody tr:last-child td {
-  border-bottom: none;
+  letter-spacing: -0.02em;
 }
 
 .pricing-warning {
@@ -1608,6 +1618,7 @@ select {
   border-radius: var(--radius);
   background: #fff5f5;
   border: 1px solid #f3c7c7;
+  min-width: 0;
 }
 
 .pricing-warning-mark {
@@ -1630,6 +1641,8 @@ select {
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 
 .pricing-footnote {
@@ -1643,11 +1656,27 @@ select {
   font-weight: 500;
   font-size: 0.95rem;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 720px) {
+  .price-category {
+    padding: 1.15rem 0.95rem 1rem;
+  }
+
   .price-category-head .btn {
     width: 100%;
+  }
+
+  .price-row-values {
+    grid-template-columns: 1fr;
+  }
+
+  .price-row-value {
+    padding: 0.55rem 0.65rem;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
   }
 }
 

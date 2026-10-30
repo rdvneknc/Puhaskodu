@@ -2,25 +2,28 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { translations } from "./translations.js";
 
 const LanguageContext = createContext(null);
-const STORAGE_KEY = "puhas-kodu-tallinn-lang";
+const STORAGE_KEY = "puhaskodu-lang";
+const DEFAULT_LANG = "ru";
+const SUPPORTED = new Set(["ru", "et", "en"]);
 
 function getInitialLang() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "et" || saved === "en" || saved === "ru") return saved;
+    if (SUPPORTED.has(saved)) return saved;
   } catch {
     /* ignore */
   }
-  return "et";
+  return DEFAULT_LANG;
 }
 
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState(getInitialLang);
 
   const setLang = (next) => {
-    setLangState(next);
+    const safe = SUPPORTED.has(next) ? next : DEFAULT_LANG;
+    setLangState(safe);
     try {
-      localStorage.setItem(STORAGE_KEY, next);
+      localStorage.setItem(STORAGE_KEY, safe);
     } catch {
       /* ignore */
     }
@@ -34,7 +37,7 @@ export function LanguageProvider({ children }) {
     () => ({
       lang,
       setLang,
-      t: translations[lang],
+      t: translations[lang] || translations[DEFAULT_LANG],
     }),
     [lang]
   );
